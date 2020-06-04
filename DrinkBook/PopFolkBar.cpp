@@ -90,9 +90,15 @@ void PopFolkBar::setWhiskeyPrice(int whiskeyPrice)
 void PopFolkBar::Compare()
 {
 	if (vodkaPrice < MIN_VODKA_PRICE_FOLK)
+	{
+		cout << "The vodka is too cheap. The price was changed to the minimal(20)" << endl;
 		this->vodkaPrice = MIN_VODKA_PRICE_FOLK;
+	}
 	if (whiskeyPrice < MIN_WHISKEY_PRICE_FOLK)
+	{
+		cout << "The whiskey is too cheap. The price was changed to the minimal(35)" << endl;
 		this->whiskeyPrice = MIN_WHISKEY_PRICE_FOLK;
+	}
 }
 
 Bar* PopFolkBar::clone()
@@ -105,7 +111,8 @@ void PopFolkBar::Print() const
 	if (current >= 1)
 	{
 		cout << "Users in " << name << ":" << endl;
-		PrintUsers(); cout << endl;
+		PrintUsers(); 
+		cout << endl;
 	}
-	cout << name << " " << capacity << " " << vodkaPrice << " " << whiskeyPrice << " " << performerName;
+	cout << name << " " << vodkaPrice << " " << whiskeyPrice << " " << performerName;
 }

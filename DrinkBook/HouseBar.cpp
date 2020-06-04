@@ -53,9 +53,15 @@ void HouseBar::setWhiskeyPrice(int whiskeyPrice)
 void HouseBar::Compare()
 {
 	if (vodkaPrice < MIN_VODKA_PRICE_HOUSE)
+	{
+		cout << "The vodka is too cheap. The price was changed to the minimal(30)" << endl;
 		this->vodkaPrice = MIN_VODKA_PRICE_HOUSE;
+	}
 	if (whiskeyPrice < MIN_WHISKEY_PRICE_HOUSE)
+	{
+		cout << "The whiskey is too cheap. The price was changed to the minimal(40)" << endl;
 		this->whiskeyPrice = MIN_WHISKEY_PRICE_HOUSE;
+	}
 }
 
 HouseBar* HouseBar::clone()
@@ -70,6 +76,5 @@ void HouseBar::Print() const
 		cout << "Users in " << name << ":" << endl;
 		PrintUsers(); cout << endl;
 	}
-
-	cout << name << " " << capacity << " " << vodkaPrice << " " << whiskeyPrice << " " << DJs;
+	cout << name << " " << vodkaPrice << " " << whiskeyPrice << " " << DJs;
 }

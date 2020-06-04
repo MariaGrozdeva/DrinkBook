@@ -55,9 +55,15 @@ void RockBar::setWhiskeyPrice(int whiskeyPrice)
 void RockBar::Compare()
 {
 	if (vodkaPrice < MIN_VODKA_PRICE_ROCK)
+	{
+		cout << "The vodka is too cheap. The price was changed to the minimal(40)" << endl;
 		this->vodkaPrice = MIN_VODKA_PRICE_ROCK;
+	}
 	if (whiskeyPrice < MIN_WHISKEY_PRICE_ROCK)
+	{
+		cout << "The whiskey is too cheap. The price was changed to the minimal(30)" << endl;
 		this->whiskeyPrice = MIN_WHISKEY_PRICE_ROCK;
+	}
 }
 
 RockBar* RockBar::clone()
@@ -70,7 +76,8 @@ void RockBar::Print() const
 	if (current >= 1)
 	{
 		cout << "Users in " << name << ":" << endl;
-		PrintUsers(); cout << endl;
+		PrintUsers(); 
+		cout << endl;
 	}
-	cout << name << " " << capacity << " " << vodkaPrice << " " << whiskeyPrice;
+	cout << name << " " << vodkaPrice << " " << whiskeyPrice;
 }
